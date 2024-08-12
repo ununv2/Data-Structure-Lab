@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Lab_01</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/Q1.docx</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Downloads/Week1%20Question1/Q1.docx</locationURI>
+		</link>
+		<link>
+			<name>src/Q1.pdf</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Downloads/Week1%20Question1/Q1.pdf</locationURI>
+		</link>
+		<link>
+			<name>src/application</name>
+			<type>2</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Downloads/Week1%20Question1/application</locationURI>
+		</link>
+		<link>
+			<name>src/logic</name>
+			<type>2</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Downloads/Week1%20Question1/logic</locationURI>
+		</link>
+		<link>
+			<name>src/test</name>
+			<type>2</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Downloads/Week1%20Question1/test</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>
