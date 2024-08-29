@@ -13,6 +13,7 @@ public class Stand extends Character{
 	public Stand(String name, String quote, int strength, int defense, int maxChargeTurn) {
 		super(name,quote,strength,defense);
 		this.maxChargeTurn = maxChargeTurn < 1 ? 1 : maxChargeTurn;
+		this.currentChargeTurn = 0;
 	}
 	
 	
