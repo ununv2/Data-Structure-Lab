@@ -33,10 +33,6 @@ public class TypingDeadList extends CDLinkedList {
 	}
 
 	public void findWord(String w) throws Exception {
-		// update start and end to mark position of the first occurrence of w
-		// The word cannot cross header node
-		// If w is not in the list, do nothing.
-		// w is assumed never to be an empty string.
 		DListIterator current = new DListIterator(header.nextNode);
 		DListIterator startPos = null;
 		int i = 0;
@@ -61,14 +57,7 @@ public class TypingDeadList extends CDLinkedList {
 		}
 		start = null;
 		end = null;
-	}
-
 	public void remove(int dec) throws Exception { // this must be the last method in your code!
-		// remove data from start to end, inclusive,
-		// if start or end is at header, do nothing.
-		// size to remove is one of the known parameter -> reduce the size parameter of
-		// the list
-		
 		if(start==null||end==null||start.currentNode==header||end.currentNode==header) {
 			return;
 		}
