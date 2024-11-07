@@ -57,6 +57,7 @@ public class TypingDeadList extends CDLinkedList {
 		}
 		start = null;
 		end = null;
+	}
 	public void remove(int dec) throws Exception { // this must be the last method in your code!
 		if(start==null||end==null||start.currentNode==header||end.currentNode==header) {
 			return;
