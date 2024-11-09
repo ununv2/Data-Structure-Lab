@@ -19,13 +19,18 @@ public class Heap {
 		}
 		mData[size - 1] = element;
 		percolateUp();
-
+		
 		// modified part is to be written below
-
-
-		
-		
-		
+		if (size > 1) {
+			int child = size - 1;
+			int child1 = size - 2;
+			if (mData[child] < mData[child1]) {
+				int temp = mData[child];
+				mData[child] = mData[child1];
+				mData[child1] = temp;
+				percolateUpFrom(size-2);
+			}
+		}
 	}
 
 	protected void percolateUp() {
@@ -42,7 +47,20 @@ public class Heap {
 			child = parent;
 		}
 	}
-
+	protected void percolateUpFrom(int index) {
+		int parent;
+		int child = index;
+		int temp;
+		while (child > 0) {
+			parent = (child - 1) / 2;
+			if (mData[parent] <= mData[child])
+				break;
+			temp = mData[parent];
+			mData[parent] = mData[child];
+			mData[child] = temp;
+			child = parent;
+		}
+	}
 	public int top() throws Exception {
 		if (size == 0)
 			throw new Exception("Empty");
