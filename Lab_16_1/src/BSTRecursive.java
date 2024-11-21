@@ -197,35 +197,28 @@ public class BSTRecursive {
 	int[] temp = new int[10]; // This array will store result we get from calling nonAVLNodes(n). Assume the number of nodes do not exceed 10.
 
 	public int[] nonAVLNodes(BSTNode n) {
-		// Assume data in any node is >= 1. You don't need to write code to deal with it.
-		// Assume no duplicate data are allowed. You don't need to write code to deal with it.
-		// Assume the whole tree always have at least one node
-		// (but n can be null since we can look at any node in the tree).
+        lastPos = -1;
+        findNonAVLNodes(n);
+        return temp;
+    }
+    public void findNonAVLNodes(BSTNode n) {
+        if(n==null) {
+            return;
+        }
+        // in order traversal to make it sorted, big to small 
+        findNonAVLNodes(n.right);
+        // if not avl then store as the last data
+        if(!isAVL(n)) {
+            temp[temp.length + lastPos] = n.data;
+            lastPos--;
+        }
+        
+        findNonAVLNodes(n.left);
+        
+        
 
-		// For a subtree that has n as its root:
-		// This method returns the values in all nodes that do not satisfy AVL constraint.
-		// The returned array must be sorted from small to large. The array has leading zero(s).
-		lastPos = -1;
-		Arrays.fill(temp, 0);
-		findNonAVLNodes(n);
-		Arrays.sort(temp);
-		return temp;
-	}
-
-	public void findNonAVLNodes(BSTNode n) {
-		if (n == null) {
-			return;
-		}
-
-		if (!isAVL(n)) {
-			lastPos++;
-			temp[lastPos] = n.data;
-		}
-
-		findNonAVLNodes(n.left);
-		findNonAVLNodes(n.right);
-	}
-
+        
+    }
 	
 
 }
