@@ -1,4 +1,3 @@
-
 public class BST {
 	BSTNode root;
 	int size;
@@ -261,14 +260,25 @@ public class BST {
 	
 	// TODO: Implement this method
 	public Iterator getKth(int k) {
-		
-
-
-
-
-
-
-		
+		BSTNode currentNode = root;
+		int leftSize;
+		while(true) {
+			if(currentNode.left == null) {
+				leftSize = 0;
+			}else {
+				leftSize = currentNode.left.TreeSize;
+			}
+			if(k < leftSize) {
+				currentNode = currentNode.left;
+			}else if (k == leftSize) {
+				break;
+			}else {
+				currentNode = currentNode.right;
+				k -= leftSize+1;
+			}
+			
+		}
+		return new TreeIterator(currentNode);
 	}
-
+	
 }

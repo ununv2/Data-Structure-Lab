@@ -22,12 +22,21 @@ public class BSTNode {
 	// TODO: Implement this method
 	public static BSTNode preorder2BST(int[] preorder) {
 		
-
-
-
-
-		return null;
+		return constructBST(preorder, 0, preorder.length-1,null);
 	}
-		
+	public static BSTNode constructBST(int[] preorder, int start, int end, BSTNode parent) {
+		if(start > end || start >= preorder.length || end >= preorder.length)
+			return null;
+		BSTNode n = new BSTNode(preorder[start], null, null, parent);
+		//find right subtree
+		int rightStart = start + 1;
+		while(rightStart < preorder.length && preorder[rightStart] < preorder[start]){
+			rightStart++;
+		}
+		n.left = constructBST(preorder, start+1, rightStart-1, n);
+		n.right = constructBST(preorder, rightStart, end, n);
+
+		return n;
+	}
 		
 }

@@ -197,12 +197,25 @@ public class BST {
 	
 	// TODO: Implement this method
 	public ArrayList<Integer> atLevel(int k) {
+		ArrayList<Integer> results = new ArrayList<Integer>();
+		if(root == null)
+			return results;
+		atLevel(0,root,k,results);
+		return results;
+	}
+	public void atLevel(int currentLevel, BSTNode n, int k, ArrayList<Integer> results){
+		if(currentLevel == k){
+			results.add(n.data);
+			return;
+		}
+		if(n.right != null){
+			atLevel(currentLevel+1, n.right, k, results);
+		}
+		if(n.left != null){
+			atLevel(currentLevel+1, n.left, k, results);
+		}
 		
 
-
-
-
-		return null;
 	}
 
 }
