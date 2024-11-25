@@ -274,11 +274,7 @@ public class BST {
 				break;
 			}else {
 				currentNode = currentNode.right;
-				k -= leftSize+1;
-			}
-			
-		}
-		return new TreeIterator(currentNode);
-	}
+				k -= leftSize+1;}}
+		return new TreeIterator(currentNode);}
 	
 }

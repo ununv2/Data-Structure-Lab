@@ -75,11 +75,19 @@ public class Heap {
 	
 	// TODO: Implement this method
 	public int[] atLevel(int k) {
-		
-
-		
-		
-		return null;
+		// Find start and end index
+		int start = ((int) Math.pow(2, k)) - 1;
+		if (start >= size) return new int[0];
+		int end = ((int) Math.pow(2, k+1)) - 2;
+		if (end >= size) {
+			end = size - 1;}
+		// Find size of result array
+		int arraySize = end - start + 1;
+		// Put all elements in level k in the created array
+		int[] result = new int[arraySize];
+		for (int i = 0; i < arraySize; i++) {
+			result[i] = mData[start + i];}
+		return result;
 	}
 	
 }

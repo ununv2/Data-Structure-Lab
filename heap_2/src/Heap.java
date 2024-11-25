@@ -75,10 +75,24 @@ public class Heap {
 	
 	// TODO: Implement this method
 	public void replace(int index, int value) {
-
-
-
+		mData[index] = value;
+		percolateDown(index);
+		percolateUp(index);
 	}
 	
+	protected void percolateUp(int start) {
+		int parent;
+		int child = start;
+		int temp;
+		while (child > 0) {
+			parent = (child - 1) / 2;
+			if (mData[parent] <= mData[child])
+				break;
+			temp = mData[parent];
+			mData[parent] = mData[child];
+			mData[child] = temp;
+			child = parent;
+		}
+	}
 	
 }

@@ -80,22 +80,12 @@ public class SepChaining {
 	
 	// TODO: Implement this method
 	public double loadFactor() {
-
-
-
-
-
-		return 0.0;
-	}
-	
-	// TODO: Implement this method
-	public int maxLength() {
-		
-
-
-
-
-		return 0;
+		return (double) currentSize / lists.length;}
+	public int maxLength(){
+		int maxlength = 0;
+		for(CDLinkedList c : lists) {
+			maxlength = Math.max(maxlength, c.size());}
+		return maxlength;
 	}
 
 }
